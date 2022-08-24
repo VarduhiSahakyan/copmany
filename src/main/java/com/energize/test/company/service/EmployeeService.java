@@ -27,7 +27,7 @@ public class EmployeeService {
 
 
     @Transactional(readOnly = true)
-    public EmployeDTO findEmployeeDataBySurname(String surname){
+    public EmployeDTO findEmployeeBySurname(String surname){
         Employee employee = employeeRepository.findEmployeeByEmploeeSurname(surname);
         return employeeMapper.convertToDto(employee, EmployeDTO.class);
     }
