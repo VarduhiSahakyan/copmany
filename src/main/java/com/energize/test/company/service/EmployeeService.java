@@ -19,18 +19,18 @@ public class EmployeeService {
     }
 
     @Transactional
-    public Employee saveEmployee(EmployeeDTO employeeDTO){
+    public EmployeeDTO saveEmployee(EmployeeDTO employeeDTO) {
         Mapper mapper = new Mapper();
         Employee employee = mapper.convertToEntity(employeeDTO, Employee.class);
         Employee createdEmployee = employeeRepository.save(employee);
-        return createdEmployee;
+        return mapper.convertToDto(createdEmployee, EmployeeDTO.class);
 
     }
 
     @Transactional(readOnly = true)
-    public EmployeeDTO findEmployeeBySurname(String surname){
+    public EmployeeDTO findEmployeeBySurname(String surname) {
         Mapper mapper = new Mapper();
-        Employee employee = employeeRepository.findByemployeeSurname(surname);
+        Employee employee = employeeRepository.findByEmployeeSurname(surname);
         return mapper.convertToDto(employee, EmployeeDTO.class);
     }
 }
