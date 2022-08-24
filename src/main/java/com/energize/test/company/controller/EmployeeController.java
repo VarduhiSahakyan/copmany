@@ -19,9 +19,7 @@ public class EmployeeController {
 
     @PostMapping
     public ResponseEntity<EmployeeDTO> saveEmployee(@RequestBody EmployeeDTO employeeDTO) {
-        Mapper mapper = new Mapper();
-        Employee createdEmployee = employeeService.saveEmployee(employeeDTO);
-        return ResponseEntity.ok(mapper.convertToDto(createdEmployee, EmployeeDTO.class));
+        return ResponseEntity.ok(employeeService.saveEmployee(employeeDTO));
     }
 
     @GetMapping("/{surname}")
