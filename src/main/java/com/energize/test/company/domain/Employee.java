@@ -8,19 +8,19 @@ public class Employee {
     @Column(unique = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    @Column
+    @Column(name = "name")
     private String employeeName;
 
-    @Column(unique = true)
+    @Column(name = "surname", unique = true)
     private String employeeSurname;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
