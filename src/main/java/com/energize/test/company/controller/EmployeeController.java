@@ -1,8 +1,6 @@
 package com.energize.test.company.controller;
 
-import com.energize.test.company.domain.Employee;
 import com.energize.test.company.dto.EmployeeDTO;
-import com.energize.test.company.mapper.Mapper;
 import com.energize.test.company.service.EmployeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
