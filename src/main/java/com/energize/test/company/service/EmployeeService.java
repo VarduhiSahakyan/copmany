@@ -18,6 +18,14 @@ public class EmployeeService {
 
     }
 
+    public boolean isEmployeeExist(String surname){
+        boolean isExist = false;
+        if (employeeRepository.findByEmployeeSurname(surname) != null)
+            isExist = true;
+        return isExist;
+
+    }
+
     @Transactional
     public EmployeeDTO saveEmployee(EmployeeDTO employeeDTO) {
         Mapper mapper = new Mapper();
