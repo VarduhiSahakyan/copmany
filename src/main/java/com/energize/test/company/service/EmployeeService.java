@@ -50,6 +50,13 @@ public class EmployeeService {
         return employeeDTO;
     }
 
+    public void deleteEmployee(Integer id){
+        Employee employee = employeeRepository.findEmployeeById(id);
+        if (employee == null)
+            throw new NotFoundException("Employee not exist");
+        employeeRepository.deleteById(id);
+    }
+
     public void isEmployeeExist(EmployeeDTO employeeDTO) {
         if (employeeRepository.findByEmployeeSurname(employeeDTO.getEmployeeSurname()) != null) {
             throw new AlreadyExistsException("Employee already exist");
