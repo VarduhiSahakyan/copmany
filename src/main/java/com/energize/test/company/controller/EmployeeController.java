@@ -22,8 +22,13 @@ public class EmployeeController {
     }
 
     @GetMapping("/{surname}")
-    public ResponseEntity<EmployeeDTO> getEmployeeBySurname(@PathVariable("surname") String surname) {
+    public ResponseEntity<EmployeeDTO> findEmployeeBySurname(@PathVariable("surname") String surname) {
         EmployeeDTO employeeDTO = employeeService.findEmployeeBySurname(surname);
         return ResponseEntity.ok(employeeDTO);
+    }
+
+    @PutMapping
+    public ResponseEntity<EmployeeDTO> updateEmployee(@RequestBody EmployeeDTO employeeDTO){
+        return ResponseEntity.ok(employeeService.updateEmployee(employeeDTO));
     }
 }
