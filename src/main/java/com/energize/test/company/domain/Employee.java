@@ -1,6 +1,7 @@
 package com.energize.test.company.domain;
 
 import javax.persistence.*;
+import java.util.stream.IntStream;
 
 @Entity
 public class Employee {
@@ -8,7 +9,7 @@ public class Employee {
     @Column(unique = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "name")
     private String employeeName;
@@ -16,11 +17,11 @@ public class Employee {
     @Column(name = "surname", unique = true)
     private String employeeSurname;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
