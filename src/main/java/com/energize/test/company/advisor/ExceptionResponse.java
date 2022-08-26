@@ -5,24 +5,27 @@ import org.springframework.http.HttpStatus;
 import java.time.ZonedDateTime;
 
 public class ExceptionResponse {
-    private final String message;
-    private final HttpStatus httpStatus;
-    private final int statusCode;
-    private final ZonedDateTime timestamp;
+    private String message;
+    private int statusCode;
+    private HttpStatus httpStatus;
+    private ZonedDateTime timestamp;
+
 
     public ExceptionResponse(String message,
-                             HttpStatus httpStatus,
                              int statusCode,
+                             HttpStatus httpStatus,
                              ZonedDateTime timestamp) {
         this.message = message;
-        this.httpStatus = httpStatus;
         this.statusCode = statusCode;
+        this.httpStatus = httpStatus;
         this.timestamp = timestamp;
     }
 
-    public String getMessage() {
-        return message;
-    }
+    public ExceptionResponse() { }
+
+    public String getMessage() { return message; }
+
+    public int getStatusCode() { return statusCode; }
 
     public HttpStatus getHttpStatus() {
         return httpStatus;
@@ -32,7 +35,11 @@ public class ExceptionResponse {
         return timestamp;
     }
 
-    public int getStatusCode() {
-        return statusCode;
-    }
+    public void setMessage(String message) { this.message = message; }
+
+    public void setStatusCode(int statusCode) { this.statusCode = statusCode; }
+
+    public void setHttpStatus(HttpStatus httpStatus) { this.httpStatus = httpStatus; }
+
+    public void setTimestamp(ZonedDateTime timestamp) { this.timestamp = timestamp; }
 }

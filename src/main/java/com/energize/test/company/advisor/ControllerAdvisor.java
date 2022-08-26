@@ -17,8 +17,8 @@ public class ControllerAdvisor {
         HttpStatus badRequest = HttpStatus.BAD_REQUEST;
         ExceptionResponse exception = new ExceptionResponse(
                 e.getMessage(),
-                badRequest,
                 badRequest.value(),
+                badRequest,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
         return new ResponseEntity<>(exception, badRequest);
@@ -30,8 +30,8 @@ public class ControllerAdvisor {
         HttpStatus badRequest = HttpStatus.BAD_REQUEST;
         ExceptionResponse exception = new ExceptionResponse(
                 e.getMessage(),
-                badRequest,
                 badRequest.value(),
+                badRequest,
                 ZonedDateTime.now(ZoneId.of("Z"))
         );
         return new ResponseEntity<>(exception, badRequest);
