@@ -2,6 +2,8 @@ package com.energize.test.company.dto;
 
 public class EmployeeDTO {
 
+    private Integer id;
+
     private String employeeName;
 
     private String employeeSurname;
@@ -12,6 +14,10 @@ public class EmployeeDTO {
 
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getEmployeeSurname() {
