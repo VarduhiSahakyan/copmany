@@ -10,6 +10,8 @@ import com.energize.test.company.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 @Service
 public class EmployeeService {
@@ -50,12 +52,23 @@ public class EmployeeService {
         return employeeDTO;
     }
 
-    public void deleteEmployee(Integer id){
+    @Transactional
+    public void deleteEmployee(Integer id) {
         Employee employee = employeeRepository.findEmployeeById(id);
         if (employee == null)
             throw new NotFoundException("Employee not exist");
         employeeRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public List<EmployeeDTO> getAllEmployee() {
+        Mapper mapper = new Mapper();
+        List<Employee> employees = employeeRepository.findAll();
+        return mapper.mapList(employees, EmployeeDTO.class);
+
+
+    }
+
 
     public void isEmployeeExist(EmployeeDTO employeeDTO) {
         if (employeeRepository.findByEmployeeSurname(employeeDTO.getEmployeeSurname()) != null) {

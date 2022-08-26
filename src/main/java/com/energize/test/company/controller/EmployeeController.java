@@ -5,6 +5,8 @@ import com.energize.test.company.service.EmployeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -37,4 +39,11 @@ public class EmployeeController {
         employeeService.deleteEmployee(id);
         return ResponseEntity.ok("Employee deleted");
     }
+
+    @GetMapping
+    public ResponseEntity<List<EmployeeDTO>> getAllEmployees(){
+        List<EmployeeDTO> employees = employeeService.getAllEmployee();
+        return ResponseEntity.ok(employees);
+    }
+
 }
