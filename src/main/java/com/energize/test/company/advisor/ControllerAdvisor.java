@@ -36,4 +36,17 @@ public class ControllerAdvisor {
         );
         return new ResponseEntity<>(exception, badRequest);
     }
+
+    @ExceptionHandler(value = {NotFoundException.class})
+    public ResponseEntity<Object> handleNotFoundException(NotFoundException e) {
+
+        HttpStatus badRequest = HttpStatus.BAD_REQUEST;
+        ExceptionResponse exception = new ExceptionResponse(
+                e.getMessage(),
+                badRequest.value(),
+                badRequest,
+                ZonedDateTime.now(ZoneId.of("Z"))
+        );
+        return new ResponseEntity<>(exception, badRequest);
+    }
 }
