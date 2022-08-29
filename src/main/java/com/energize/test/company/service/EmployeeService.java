@@ -38,6 +38,8 @@ public class EmployeeService {
     public EmployeeDTO findEmployeeBySurname(String surname) {
         Mapper mapper = new Mapper();
         Employee employee = employeeRepository.findByEmployeeSurname(surname);
+        if (employee == null)
+            throw new NotFoundException("Employee not exist");
         return mapper.convertToDto(employee, EmployeeDTO.class);
     }
 

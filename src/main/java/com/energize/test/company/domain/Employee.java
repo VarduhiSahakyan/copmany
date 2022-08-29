@@ -1,7 +1,6 @@
 package com.energize.test.company.domain;
 
 import javax.persistence.*;
-import java.util.stream.IntStream;
 
 @Entity
 public class Employee {
