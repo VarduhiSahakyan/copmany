@@ -3,6 +3,7 @@ package com.energize.test.company.advisor;
 import com.energize.test.company.AlreadyExistsException;
 import com.energize.test.company.NotFoundException;
 import com.energize.test.company.NotValidException;
+import com.energize.test.company.zexceptions.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

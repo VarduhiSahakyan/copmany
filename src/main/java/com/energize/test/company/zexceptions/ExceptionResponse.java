@@ -1,4 +1,4 @@
-package com.energize.test.company.advisor;
+package com.energize.test.company.zexceptions;
 
 import org.springframework.http.HttpStatus;
 
