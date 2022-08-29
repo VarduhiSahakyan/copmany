@@ -1,4 +1,4 @@
-package com.energize.test.company.advisor;
+package com.energize.test.company;
 
 public class NotFoundException extends RuntimeException {
 
