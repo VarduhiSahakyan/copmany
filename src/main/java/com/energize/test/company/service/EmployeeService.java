@@ -1,8 +1,8 @@
 package com.energize.test.company.service;
 
-import com.energize.test.company.AlreadyExistsException;
-import com.energize.test.company.NotFoundException;
-import com.energize.test.company.NotValidException;
+import com.energize.test.company.zexceptions.AlreadyExistsException;
+import com.energize.test.company.zexceptions.NotFoundException;
+import com.energize.test.company.zexceptions.NotValidException;
 import com.energize.test.company.domain.Employee;
 import com.energize.test.company.dto.EmployeeDTO;
 import com.energize.test.company.mapper.Mapper;

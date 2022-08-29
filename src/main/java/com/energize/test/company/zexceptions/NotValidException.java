@@ -1,4 +1,4 @@
-package com.energize.test.company;
+package com.energize.test.company.zexceptions;
 
 public class NotValidException extends RuntimeException {
 
