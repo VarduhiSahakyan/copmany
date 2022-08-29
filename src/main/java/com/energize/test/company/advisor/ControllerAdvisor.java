@@ -1,7 +1,7 @@
 package com.energize.test.company.advisor;
 
 import com.energize.test.company.zexceptions.AlreadyExistsException;
-import com.energize.test.company.zexceptions.NotFoundException;
+import com.energize.test.company.zexceptions.EmployeeNotFoundException;
 import com.energize.test.company.zexceptions.NotValidException;
 import com.energize.test.company.zexceptions.ExceptionResponse;
 import org.springframework.http.HttpStatus;
@@ -41,8 +41,8 @@ public class ControllerAdvisor {
         return new ResponseEntity<>(exception, badRequest);
     }
 
-    @ExceptionHandler(value = {NotFoundException.class})
-    public ResponseEntity<Object> handleNotFoundException(NotFoundException e) {
+    @ExceptionHandler(value = {EmployeeNotFoundException.class})
+    public ResponseEntity<Object> handleNotFoundException(EmployeeNotFoundException e) {
 
         HttpStatus badRequest = HttpStatus.BAD_REQUEST;
         ExceptionResponse exception = new ExceptionResponse(
